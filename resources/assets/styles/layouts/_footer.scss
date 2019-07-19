@@ -1,6 +1,7 @@
 .usa-footer-secondary_section {
   background-color: $color-base;
   color: $color-gray-lightest;
+  padding-top: 4rem;
   a {
     color: $color-primary-alt-light;
     &:hover {
@@ -13,6 +14,7 @@
   
   .group {
     @include clearfix;
+	margin-bottom: 1.3em;
   }
 }
 
@@ -60,6 +62,7 @@
     left: .7rem;
   }
   margin-left: .3rem;
+  margin-top: .6em;
   background-size: auto 4rem;
 }
 

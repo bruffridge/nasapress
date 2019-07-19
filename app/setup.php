@@ -22,6 +22,7 @@ add_action('wp_print_styles', function () {
   wp_dequeue_style('yarppRelatedCss');
 });
 
+
 // REMOVE EMOJI ICONS
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles'); 
@@ -83,20 +84,38 @@ add_action('after_setup_theme', function () {
  * Register sidebars
  */
 add_action('widgets_init', function () {
-    $config = [
-        'before_widget' => '<section class="widget %1$s %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h3>',
+	register_sidebar( array(
+		'name'			=> 'NASA Responsible Official Widget Area',
+		'id'			=> 'nasa-official',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
         'after_title'   => '</h3>'
-    ];
-    register_sidebar([
-        'name'          => __('Primary', 'sage'),
-        'id'            => 'sidebar-primary'
-    ] + $config);
-    register_sidebar([
-        'name'          => __('Footer', 'sage'),
-        'id'            => 'sidebar-footer'
-    ] + $config);
+	));
+	register_sidebar( array(
+		'name'			=> 'Social Media Links Widget Area',
+		'id'			=> 'social-media',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+	));
+	register_sidebar( array(
+		'name'			=> 'NASA Center Information Widget Area',
+		'id'			=> 'nasa-center-info',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+    ));
+    register_sidebar( array(
+		'name'			=> 'Posts Navigation Sidebar',
+		'id'			=> 'posts-nav-bar',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+    ));
 });
 
 /**
@@ -167,9 +186,11 @@ add_action('after_setup_theme', function () {
  */
 sage()->bindIf('config', Config::class, true);
 
+require_once 'lib/App/header-settings.php';
+require_once 'lib/App/center-information-widget.php';
+require_once 'lib/App/social-media-links-widget.php';
+require_once 'lib/App/nasapress-page-options.php';
 require_once 'lib/App/NASAWDSBasicNavwalker.php';
-require_once 'lib/App/acf-nasapress.php';
-require_once 'lib/App/nasa-official.php';
 require_once 'lib/App/child-navigation.php';
 
 add_image_size( 'medium_large', '768', '0', false ); 

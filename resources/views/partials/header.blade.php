@@ -1,20 +1,25 @@
 <a class="usa-skipnav" href="#main-content">Skip to main content</a>
-<header class="usa-header usa-header-basic usa-header-dark" role="banner">
+@if ( trim(get_post_meta(get_the_ID(), 'options_display_hero', true)) == 'Yes' )
+<header class="usa-header usa-header-basic usa-header-dark">
+@else
+<header class="usa-header usa-header-basic usa-header-dark" style="background-color: {{ get_option( 'header_settings_background_color' ) }}; padding-bottom: 1rem;">
+@endif
   <div class="usa-nav-container">
     <div class="usa-navbar">
       <div class="usa-logo" id="logo">
         <em class="usa-logo-text">
           <a href="{{ esc_url(home_url('/')) }}" accesskey="1" title="Home" aria-label="Home">
-            <img src="@asset('images/logo-nasa.svg')" alt="NASA logo">
-            <!-- todo-config -->
-            <span class="usa-logo-main-text">Glenn </span><br/>Research Center</a>
+			@php
+			  echo '<img src="' . esc_url( wp_get_attachment_image_url( get_option( 'header_settings_logo' ) , 'full' ) ) . '" alt="Site Logo">';
+			  echo '<span class="usa-logo-main-text">' . get_option( 'header_settings_title_one' ) . '&nbsp;</span><br>' . get_option( 'header_settings_title_two' ) . '</a>';
+			@endphp
         </em>
       </div>
       <button class="usa-menu-btn">Menu</button>
     </div>
-    <nav role="navigation" class="usa-nav usa-nav-dark">
+    <nav class="usa-nav usa-nav-dark">
       <button class="usa-nav-close">
-        <img src="@asset('images/close.svg')" alt="close">
+        <img src="{{ get_template_directory_uri() }}/assets/images/close.svg" alt="close">
       </button>
       @php
         if (has_nav_menu('primary_navigation')) :
@@ -30,9 +35,6 @@
           ));
         endif;
       @endphp
-      @include('partials.search')
     </nav>
   </div>
 </header>
-
-

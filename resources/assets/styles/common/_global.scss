@@ -20,7 +20,7 @@ body {
   
   height: auto;
   @include media($nav-width) {
-    margin-top: $header-height;
+    margin-top: 0;
   }
 }
 
@@ -32,6 +32,12 @@ body {
 
 .usa-heading {
   color: $color-primary-darker;
+}
+
+.usa-content {
+  p, ol, ul {
+    max-width: none !important;
+  }
 }
 
 .site-subheading, .usa-serif-body p.site-subheading { // higher specificity needed to override .usa-serif-body p styling in nasawds

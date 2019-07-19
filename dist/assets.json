@@ -1,9 +1,10 @@
 {
-  "images/aero.jpeg": "images/aero_6b300e39.jpeg",
-  "images/bli_grc.jpg": "images/bli_grc_da1b6bf2.jpg",
+  "images/alerts/error.png": "images/alerts/error_e1eb62b4.png",
+  "images/alerts/error.svg": "images/alerts/error_f5d80399.svg",
+  "images/alerts/success.png": "images/alerts/success_6324981c.png",
+  "images/alerts/success.svg": "images/alerts/success_b0fa3986.svg",
   "images/logo-nasa.png": "images/logo-nasa_127b9385.png",
-  "images/logo-nasa.svg": "images/logo-nasa_e25371fc.svg",
-  "images/mars-rover-tracks.jpg": "images/mars-rover-tracks_2a9950e5.jpg",
+  "images/logo-nasa.svg": "images/logo-nasa_d9971ab5.svg",
   "images/social-icons/png/social-icon-facebook.png": "images/social-icons/png/social-icon-facebook_0707c54e.png",
   "images/social-icons/png/social-icon-flickr.png": "images/social-icons/png/social-icon-flickr_c697f0c6.png",
   "images/social-icons/png/social-icon-instagram.png": "images/social-icons/png/social-icon-instagram_e2ea7635.png",
@@ -14,7 +15,8 @@
   "images/social-icons/svg/social-icon-instagram.svg": "images/social-icons/svg/social-icon-instagram_a79ee863.svg",
   "images/social-icons/svg/social-icon-twitter.svg": "images/social-icons/svg/social-icon-twitter_aff81385.svg",
   "images/social-icons/svg/social-icon-youtube.svg": "images/social-icons/svg/social-icon-youtube_8c41a252.svg",
-  "images/star_background.jpg": "images/star_background_e504c610.jpg",
+  "img/external-link-black.svg": "img/external-link-black_f0562d82.svg",
+  "img/external-link.svg": "img/external-link_55c1c2dd.svg",
   "vendor/angle-arrow-down-hover.png": "vendor/angle-arrow-down-hover_891b9d6a.png",
   "vendor/angle-arrow-down-hover.svg": "vendor/angle-arrow-down-hover_4e8a0b27.svg",
   "vendor/angle-arrow-down-primary-hover.png": "vendor/angle-arrow-down-primary-hover_51b42b0e.png",
@@ -114,7 +116,6 @@
   "vendor/warning.svg": "vendor/warning_4ba1d198.svg",
   "vendor/youtube15.png": "vendor/youtube15_678a2a7f.png",
   "vendor/youtube15.svg": "vendor/youtube15_bededcff.svg",
-  "scripts/customizer.js": "scripts/customizer_4e6e8e74.js",
-  "styles/main.css": "styles/main_4e6e8e74.css",
-  "scripts/main.js": "scripts/main_4e6e8e74.js"
+  "styles/main.css": "styles/main_7b423573.css",
+  "scripts/main.js": "scripts/main_7b423573.js"
 }

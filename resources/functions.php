@@ -55,7 +55,7 @@ array_map(function ($file) use ($sage_error) {
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin']);
+}, ['helpers', 'setup', 'filters']);
 
 /**
  * Here's what's happening with these hooks:
@@ -74,9 +74,7 @@ array_map(function ($file) use ($sage_error) {
  * ├── STYLESHEETPATH         -> /srv/www/example.com/current/web/app/themes/sage/resources/views
  * └── TEMPLATEPATH           -> /srv/www/example.com/current/web/app/themes/sage/resources
  */
-if (is_customize_preview() && isset($_GET['theme'])) {
-    $sage_error(__('Theme must be activated prior to using the customizer.', 'sage'));
-}
+
 $sage_views = basename(dirname(__DIR__)).'/'.basename(__DIR__).'/views';
 add_filter('stylesheet', function () use ($sage_views) {
     return dirname($sage_views);
@@ -84,6 +82,7 @@ add_filter('stylesheet', function () use ($sage_views) {
 add_filter('stylesheet_directory_uri', function ($uri) {
     return dirname($uri);
 });
+remove_filter('term_description','wpautop');
 if ($sage_views !== get_option('stylesheet')) {
     update_option('stylesheet', $sage_views);
     wp_redirect($_SERVER['REQUEST_URI']);
